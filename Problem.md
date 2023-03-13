@@ -31,6 +31,6 @@ Output: false
 
 # Next Steps
 
-* Once you've solved for a string of characters only containing `{` , and `}`. Think back to our puzzle, how should we handle an input that contains other characters?
+* Once you've solved for a string of characters only containing `{` , and `}`. Think back to our [puzzle](./Readme.md), how should we handle an input that contains other characters?
 
 
