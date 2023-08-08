@@ -6,6 +6,12 @@ def test_single_brackets():
 def test_multiple_brackets():
     assert(validate_parens("{{}}"))
 
+def test_multiple_brackets_nested():
+    assert(validate_parens("{{}{}}"))
+
+def test_invalid_brackets():
+    assert(not validate_parens("}{"))
+
 def test_invalid_string():
     assert(not validate_parens("{{"))
  

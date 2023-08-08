@@ -23,26 +23,29 @@ def validate_parens(input: str) -> bool:
     Output: True/False
     '''
     stack = []
-    for character in input:
-            match character:
-                case '{':
-                    stack.append(character)
-                case '[':
-                    stack.append(character)
-                case '(':
-                    stack.append(character)
-                case '}':
-                    top = stack.pop()
-                    if top != '{':
-                        return False
-                case ']':
-                    top = stack.pop()
-                    if top != '[':
-                        return False
-                case ')':
-                    top = stack.pop()
-                    if top != '(':
-                        return False
+    try:
+        for character in input:
+                match character:
+                    case '{':
+                        stack.append(character)
+                    case '[':
+                        stack.append(character)
+                    case '(':
+                        stack.append(character)
+                    case '}':
+                        top = stack.pop()
+                        if top != '{':
+                            return False
+                    case ']':
+                        top = stack.pop()
+                        if top != '[':
+                            return False
+                    case ')':
+                        top = stack.pop()
+                        if top != '(':
+                            return False
+    except:
+        return False
     return len(stack) == 0
 
 if __name__ == "__main__":
