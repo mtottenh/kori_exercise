@@ -4,7 +4,7 @@ echo "Installing Xcode tooling"
 xcode-select --install
 
 echo "Installing Homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+[ -z "$(command -v brew)" ] && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing libraires"
 brew install vscodium pyenv pyenv-virtualenv vim git openssl readline sqlite3 xz zlib tcl-tk
@@ -17,9 +17,10 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
 source ~/.bashrc
 
-echo "Cloning KORI git repo"
-git clone https://github.com/mtottenh/kori_exercise.git
-pushd kori_exercise
+#echo "Cloning KORI git repo"
+#git clone https://github.com/mtottenh/kori_exercise.git
+#pushd kori_exercise
+echo "Setting up pyenv virtualenv"
 pyenv update
 pyenv install 3.10.10
 pyenv virtualenv 3.10.10 kori
